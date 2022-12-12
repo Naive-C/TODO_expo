@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react';
 import { db } from '../firebaseConfig'
 
 import DoneList from '../Components/DoneList'
+import DeleteDone from '../DB/DeleteDone';
 
 const Done = () => { 
     const [done, setDone] = useState([]);
@@ -23,6 +24,7 @@ const Done = () => {
     }
     
     const onRemove = id => () => {
+      DeleteDone({id, ReadDone})
     };
 
     return (
